@@ -1,10 +1,18 @@
-import unittest
+import unittest, os
 from src.lab4.task1.recommended_movie import RecommendedMovie
 
 class MyTestCase(unittest.TestCase):
-    movies_path = "movies.txt"
-    history_path = "history.txt"
-    recommendedMovie = RecommendedMovie(movies_path, history_path)
+
+    def setUp(self):
+        # Получаем текущую директорию, где находится файл с тестами
+        current_dir = os.path.dirname(__file__)  # Это дает путь к текущей папке с файлом теста
+
+        # Строим пути к файлам movies.txt и history.txt относительно текущей папки
+        movies_path = os.path.join(current_dir, 'movies.txt')
+        history_path = os.path.join(current_dir, 'history.txt')
+
+        # Создаем объект RecommendedMovie, передав правильные пути
+        self.recommendedMovie = RecommendedMovie(movies_path, history_path)
 
     def test_creating_people(self):
         self.assertEqual(self.recommendedMovie.people[0].history, ['2', '1', '3'])
