@@ -20,7 +20,7 @@ class RecommendedMovie:
 
     def creating_people(self, filepath): #Читаем список историй просмотров пользователей из файла
         # и сохраняем их в листе people
-        with open(filepath, 'r') as file:
+        with open(filepath, 'r', encoding="utf-8") as file:
             for i, movies in enumerate(file.readlines()):
                 movies = movies.strip().split(",")
                 if movies != [""]:
@@ -29,7 +29,7 @@ class RecommendedMovie:
 
     def creating_movies(self, filepath): #Читаем список фильмов из файла
         # и сохраняем их в словаре movies
-        with open(filepath, 'r') as file:
+        with open(filepath, 'r', encoding="utf-8") as file:
             movies = []
             for line in file.readlines():
                 if line.strip():
