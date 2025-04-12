@@ -1,7 +1,5 @@
 import unittest
 from unittest.mock import patch, MagicMock, call
-import time
-import threading
 from src.laba2.task6 import print_message, sequential_execution, parallel_execution
 
 class TestThreadingFunctions(unittest.TestCase):

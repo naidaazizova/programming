@@ -38,10 +38,10 @@ class TestRaceCondition(unittest.TestCase):
 
             demonstrate_race_condition()
 
-            # Проверяем что создали 10 потоков
+            # Проверяем, что создали 10 потоков
             self.assertEqual(mock_thread.call_count, 10)
 
-            # Проверяем что для каждого вызвали start и join
+            # Проверяем, что для каждого вызвали start и join
             self.assertEqual(mock_thread.return_value.start.call_count, 10)
             self.assertEqual(mock_thread.return_value.join.call_count, 10)
 

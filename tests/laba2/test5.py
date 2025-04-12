@@ -1,7 +1,5 @@
 import unittest
 from unittest.mock import patch, MagicMock, call
-import time
-import threading
 from src.laba2.task5 import print_with_delay, main
 
 class TestThreadingExample(unittest.TestCase):
